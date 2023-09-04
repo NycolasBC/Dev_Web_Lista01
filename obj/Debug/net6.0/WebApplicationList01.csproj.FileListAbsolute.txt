@@ -31,3 +31,4 @@ C:\Users\n\Desktop\Repositorios\Uniaraxa\4° Periodo\Desenvolvimento Web\Ativida
 C:\Users\n\Desktop\Repositorios\Uniaraxa\4° Periodo\Desenvolvimento Web\Atividades\Visual Studio\WebApplicationList01\obj\Debug\net6.0\WebApplicationList01.pdb
 C:\Users\n\Desktop\Repositorios\Uniaraxa\4° Periodo\Desenvolvimento Web\Atividades\Visual Studio\WebApplicationList01\obj\Debug\net6.0\WebApplicationList01.genruntimeconfig.cache
 C:\Users\n\Desktop\Repositorios\Uniaraxa\4° Periodo\Desenvolvimento Web\Atividades\Visual Studio\WebApplicationList01\obj\Debug\net6.0\ref\WebApplicationList01.dll
+C:\Users\n\Desktop\Repositorios\Uniaraxa\4° Periodo\Desenvolvimento Web\Atividades\Visual Studio\WebApplicationList01\bin\Debug\net6.0\Data\aluno.json

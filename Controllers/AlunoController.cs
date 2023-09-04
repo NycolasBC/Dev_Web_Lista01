@@ -7,7 +7,7 @@ namespace WebApplicationList01.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class AlunoController : ControllerBase
+    public class AlunoController : PrincipalController
     {
         private readonly string _alunoCaminhoArquivo;
 
@@ -27,20 +27,6 @@ namespace WebApplicationList01.Controllers
 
             string json = System.IO.File.ReadAllText(_alunoCaminhoArquivo);
             return JsonConvert.DeserializeObject<List<AlunoViewModel>>(json);
-        }
-
-        private int ObterProximoRADisponivel()
-        {
-            List<AlunoViewModel> alunos = LerAlunosDoArquivo();
-
-            if (alunos.Any())
-            {
-                return alunos.Max(a => a.RA) + 1;
-            }
-            else
-            {
-                return 1;
-            }
         }
 
         private void EscreverAlunosNoArquivo(List<AlunoViewModel> alunos)
@@ -63,7 +49,7 @@ namespace WebApplicationList01.Controllers
 
 
         [HttpGet("{ra}")]
-        public IActionResult Get(int ra)
+        public IActionResult Get(string ra)
         {
             List<AlunoViewModel> alunos = LerAlunosDoArquivo();
             AlunoViewModel aluno = alunos.Find(a => a.RA == ra);
@@ -79,22 +65,16 @@ namespace WebApplicationList01.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] NovoAlunoViewModel aluno)
         {
-            if (aluno == null)
+            if (!ModelState.IsValid)
             {
-                return BadRequest();
-            }
-
-            if (!ValidacaoAluno(aluno))
-            {
-                return BadRequest();
+                return ApiBadRequestResponse(ModelState);
             }
 
             List<AlunoViewModel> alunos = LerAlunosDoArquivo();
-            int proximoRA = ObterProximoRADisponivel();
 
             AlunoViewModel novoAluno = new AlunoViewModel()
             {
-                RA = proximoRA,
+                RA = aluno.RA,
                 Nome = aluno.Nome,
                 Email = aluno.Email,
                 CPF = aluno.CPF,
@@ -104,16 +84,16 @@ namespace WebApplicationList01.Controllers
             alunos.Add(novoAluno);
             EscreverAlunosNoArquivo(alunos);
 
-            return CreatedAtAction(nameof(Get), new { ra = novoAluno.RA }, novoAluno);
+            return ApiResponse(novoAluno, "Aluno criado com sucesso.");
         }
 
 
         [HttpPut("{ra}")]
-        public IActionResult Put(int ra, [FromBody] EditaAlunoViewModel aluno)
+        public IActionResult Put(string ra, [FromBody] EditaAlunoViewModel aluno)
         {
-            if (aluno == null)
+            if (!ModelState.IsValid)
             {
-                return BadRequest();
+                return ApiBadRequestResponse(ModelState);
             }
 
             List<AlunoViewModel> alunos = LerAlunosDoArquivo();
@@ -140,7 +120,7 @@ namespace WebApplicationList01.Controllers
 
 
         [HttpDelete("{ra}")]
-        public IActionResult Delete(int ra)
+        public IActionResult Delete(string ra)
         {
             List<AlunoViewModel> alunos = LerAlunosDoArquivo();
             AlunoViewModel aluno = alunos.Find(a => a.RA == ra);
@@ -156,23 +136,5 @@ namespace WebApplicationList01.Controllers
         }
 
         #endregion
-
-        private bool ValidacaoAluno(NovoAlunoViewModel aluno)
-        {
-            if (aluno.Nome == "")
-            {
-                return false;
-            }
-            if (aluno.CPF == "")
-            {
-                return false;
-            }
-            if (aluno.Email == "")
-            {
-                return false;
-            }
-
-            return true;
-        }
     }
 }
