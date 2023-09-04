@@ -1,5 +1,5 @@
 # Dev_Web_Lista01
-Lista 1 de atividade de Desenvolvimento Web - 4° Período Uniaraxá
+Lista 1 e 2 de atividade de Desenvolvimento Web - 4° Período Uniaraxá
 
 <div>
     <h1>Lista 1 de atividades:</h1>
@@ -39,4 +39,46 @@ Ok(), BadRequest(), NotFound() , entre outros. Especifique a diferença de cada 
       <p>• https://: Indica que a comunicação entre o cliente (navegador) e o servidor (API) é criptografada</p>
       <p>• minhaapi.com.br: É o domínio da API. O domínio é o endereço principal que os usuários utilizam para acessar uma aplicação web ou uma API</p>
       <p>• /api/vendas: São as rotas da api. É a parte do caminho do URL que especifica o recurso que está sendo acessado na API</p>
+</div>
+<br>
+<br>
+<br>
+<br>
+<div>
+    <h1>Lista 2 de atividades:</h1>
+    <h3>Questão 1: Descreva 3 importantes motivos para validarmos os dados em nossa API.</h3>
+      <p>Segurança, Integridade dos Dados e Prevenção de Erros Lógicos</p>
+  <br>
+  <br>
+    <h3>Questão 2: Considere as seguintes entidades, descreva quais as validações você faria e como faria:</h3>
+      <h4>a)	Cenário 1: Cadastro de cliente com:</h4>
+        <p>Nome:</p>
+        <p>CPF:</p>
+        <p>Data Nascimento:</p>
+        <p>Email:</p>
+        <p>Telefone:</p>
+        <p>Senha:</p>
+        <p>Cep:</p>
+        <p>Rua:</p>
+        <p>Bairro:</p>
+        <p>Cidade:</p>
+        <p>Estado:</p>
+  <br>
+      <h4>b)	Cenário 2: Cadastro de Disciplina:</h4>
+        <p>Nome:</p>
+        <p>Carga Horária:</p>
+        <p>Objetivo:</p>
+        <p>Ementa:</p>
+        <p>Semestre:</p>
+        <p>Ano:</p>
+        <p>Nome Professor:</p>
+  <br>
+  <br>
+    <h3>Questão 3: Em sala mostramos as validações utilizando inicialmente “o bom e velho if/else”, porém falamos que esse processo pode conter vantagens e desvantagens, por isso, mostramos depois o data annotation. Descreva comparando as duas técnicas apresentando vantagens e desvantagens.</h3>
+    <p>O if/else lhe permite uma flexiblidade maior em relação as validações. Mas como se trata de uma validação manual, quando tiver muitas validações a serem feitas se torna inviável sua utilização</p>
+    <p>O Data Annotations é simples de usar e diminui a quantidade de códigos a ser utilizado, mas sua flexibilidade não é tão boa, limitando-se a regras simples.</p>
+  <br>
+  <br>
+    <h3>Questão 4: Em sala mostramos que ao usar o data annotation, quando um dado é invalidado, ele não “chamava” a action e já retornava o “error message”. Descreva o que acontecia nesse caso que ele automaticamente já validava e não caia no debug da action?</h3>
+      <p>O .Net consegue realizar um filtro que automaticamente valida os dados de acordo com os tipos dele. Sendo assim, quando estiverem incorretos ele automaticamente já faz uma validação.</p>
 </div>
