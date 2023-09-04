@@ -52,26 +52,22 @@ Ok(), BadRequest(), NotFound() , entre outros. Especifique a diferença de cada 
   <br>
     <h3>Questão 2: Considere as seguintes entidades, descreva quais as validações você faria e como faria:</h3>
       <h4>a)	Cenário 1: Cadastro de cliente com:</h4>
-        <p>Nome:</p>
-        <p>CPF:</p>
-        <p>Data Nascimento:</p>
-        <p>Email:</p>
-        <p>Telefone:</p>
-        <p>Senha:</p>
-        <p>Cep:</p>
-        <p>Rua:</p>
-        <p>Bairro:</p>
-        <p>Cidade:</p>
-        <p>Estado:</p>
+        <p>Nome: validação de tamanho de string e obrigatório. Utilizaria o data annotation</p>
+        <p>CPF: validação da receita e obrigatório. Utilizaria um data annotation personalizado</p>
+        <p>Data Nascimento: validação que verifica idade. Utilizaria o data annotation</p>
+        <p>Email: validação de formato e verificar se é único. Utilizaria o data annotation</p>
+        <p>Telefone: validação de formato e verificar se é único. Utilizaria o data annotation</p>
+        <p>Senha: validação para que a senha contenha alguns critérios.</p>
+        <p>Cep, Rua, Bairro, Cidade, Estado: verificação de formato e se o lugar existe.</p>
   <br>
       <h4>b)	Cenário 2: Cadastro de Disciplina:</h4>
-        <p>Nome:</p>
-        <p>Carga Horária:</p>
-        <p>Objetivo:</p>
-        <p>Ementa:</p>
-        <p>Semestre:</p>
-        <p>Ano:</p>
-        <p>Nome Professor:</p>
+        <p>Nome: validação de tamanho de string e obrigatório. Utilizaria o data annotation</p>
+        <p>Carga Horária: validação de tipo. Utilizaria o data annotation</p>
+        <p>Objetivo: validação de tamanho de string. Utilizaria o data annotation</p>
+        <p>Ementa: validação de tamanho de string. Utilizaria o data annotation</p>
+        <p>Semestre: validação para verificar se está dentro de uma faixa válida</p>
+        <p>Ano: validação de tipo. Utilizaria o data annotation</p>
+        <p>Nome Professor: validação de tamanho de string e obrigatório. Utilizaria o data annotation</p>
   <br>
   <br>
     <h3>Questão 3: Em sala mostramos as validações utilizando inicialmente “o bom e velho if/else”, porém falamos que esse processo pode conter vantagens e desvantagens, por isso, mostramos depois o data annotation. Descreva comparando as duas técnicas apresentando vantagens e desvantagens.</h3>
